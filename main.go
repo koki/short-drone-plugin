@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/kubeciio/koki/cmd"
+	"github.com/koki/short-drone-plugin/cmd"
 
 	log "github.com/Sirupsen/logrus"
 )

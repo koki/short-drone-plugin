@@ -10,17 +10,17 @@ import (
 )
 
 type FlagOrEnv struct {
-	name      string
-	value     string
-	envPrefix string
-	defVal    string
+	name         string
+	value        string
+	envPrefix    string
+	defaultValue string
 
 	noOptFlag bool
 }
 
 func (f *FlagOrEnv) String() string {
 	val := f.value
-	if val == "" || val == f.defVal {
+	if val == "" || val == f.defaultValue {
 		envVal := os.Getenv(fmt.Sprintf("%s%s", f.envPrefix, f.name))
 		if envVal != "" {
 			val = envVal
@@ -46,7 +46,7 @@ func (f *FlagOrEnv) Type() string {
 	return "FlagOrEnv"
 }
 
-func (f *FlagOrEnv) AddToCobraCommand(cmd *cobra.Command, name, short, defVal, usage, prefix string, isNoOpt bool) {
+func (f *FlagOrEnv) AddToCobraCommand(cmd *cobra.Command, name, short, defaultValue, usage, prefix string, isNoOpt bool) {
 	if cmd == nil {
 		return
 	}
@@ -54,19 +54,19 @@ func (f *FlagOrEnv) AddToCobraCommand(cmd *cobra.Command, name, short, defVal, u
 	f.name = normalize(name)
 	f.envPrefix = normalize(prefix)
 	f.noOptFlag = isNoOpt
-	f.value = defVal
-	f.defVal = defVal
+	f.value = defaultValue
+	f.defaultValue = defaultValue
 
 	flag := &pflag.Flag{
 		Name:      name,
 		Shorthand: short,
 		Usage:     usage,
 		Value:     f,
-		DefValue:  defVal,
+		DefValue:  defaultValue,
 	}
 
 	if isNoOpt {
-		flag.NoOptDefVal = defVal
+		flag.NoOptDefVal = defaultValue
 	}
 
 	cmd.Flags().AddFlag(flag)
