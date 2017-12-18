@@ -1,0 +1,8 @@
+site_name: Drone Plugin for Koki Short
+pages:
+ - Home: index.md
+theme: cinder
+extra_css:
+   - custom/tweaks.css
+repo_url: https://github.com/koki/short-drone-plugin
+site_favicon: favicon.ico
