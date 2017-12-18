@@ -1,2 +1,2 @@
-package: github.com/kubeciio/koki
+package: github.com/koki/short-drone-plugin
 import: []

@@ -3,8 +3,8 @@ package cmd
 import (
 	"github.com/spf13/cobra"
 
-	"github.com/kubeciio/koki/executor"
-	"github.com/kubeciio/koki/types"
+	"github.com/koki/short-drone-plugin/executor"
+	"github.com/koki/short-drone-plugin/types"
 )
 
 var (
@@ -74,4 +74,6 @@ func init() {
 	files.AddToCobraCommand(KokiCmd, "files", "f", "", "path to koki short files that need to be transformed", droneEnvPrefix, false)
 	shortPath.AddToCobraCommand(KokiCmd, "short-path", "s", "", "path to short binary", droneEnvPrefix, false)
 	overwrite.AddToCobraCommand(KokiCmd, "overwrite", "w", "false", "overwrite existing files (fails by default)", droneEnvPrefix, true)
+
+	KokiCmd.AddCommand(versionCmd)
 }

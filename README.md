@@ -1,6 +1,6 @@
-# Koki Drone Plugin for [kubeci.io](https://github.com/kubeciio)
+# Drone Plugin for Koki Short
 
-This is a drone plugin meant to be run in the pipeline of kubeciio. This plugin can read [Koki Short](https://www.koki.io) files from your repository and translate them on the fly to Kubernetes manifest files. 
+This is a drone plugin meant to be run in the pipeline when Koki Short files are used. This plugin can read [Koki Short](https://www.koki.io) files from your repository and translate them on the fly to Kubernetes manifest files. 
 
 Koki files provide a better user experience for users writing and reading Kubernetes manifests. 
 
