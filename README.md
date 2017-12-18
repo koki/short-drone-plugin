@@ -12,7 +12,7 @@ This plugin supports the following options
 |--------|------|-------------|
 | files  | []string | Input files relative to root of the project which is being built using drone |
 | overwrite | bool | Set to `true` to allow output files to be overwritten. (default `false`) |
-| in_place | bool | Set to `true` to translate files in place. (default `false`) |
+| in_place | bool | Set to `true` to translate files in place. (default `false`). Should always be used with `overwrite: true` |
 | prefix | string | The prefix of the output file created. (default `kube_`) |
 
 The plugin preserves the directory of the files, as it translates them. 

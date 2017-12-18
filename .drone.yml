@@ -1,0 +1,10 @@
+workspace:
+ base: /go
+ path: src/github.com/koki/short-drone-plugin
+
+pipeline:
+  koki-short:
+    image: kokster/short-drone-plugin:0.3.0
+    pull: true
+    files:
+    - deployment.yaml
