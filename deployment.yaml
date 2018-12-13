@@ -9,5 +9,5 @@ deployment:
   name: example-deployment
   replicas: 3
   selector:
-    app: example
+    app: example1
   version: extensions/v1beta1
